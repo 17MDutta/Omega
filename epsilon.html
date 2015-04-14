@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app>
+  <head>
+	<title>Angular - My Notes</title>
+
+  <body>
+	<h1>Question and Answers</h1>
+	<div ng-controller="Note">
+  	<div ng-repeat="item in items">
+    	<input type="text" placeholder="{{item.questionPlaceholder}}" ng-model="item.question">
+    	<input type="text" placeholder="{{item.aPlaceholder}}" ng-model="item.a">
+    	<input type="text" placeholder="{{item.bPlaceholder}}" ng-model="item.b">
+    	<input type="text" placeholder="{{item.cPlaceholder}}" ng-model="item.c">
+    	<input type="text" placeholder="{{item.dPlaceholder}}" ng-model="item.d">
+    	<label> Question {{$index+1}}: {{item.question}}</label>
+    	<label> Answer A: {{item.a}}</label>
+    	<label> Answer B: {{item.b}}</label>
+    	<label> Answer C: {{item.c}}</label>
+    	<label> Answer D: {{item.d}}</label>
+
+   	 
+  	</div>
+  	<button ng-click="add()">New Item</button>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	<script type="text/javascript">
+
+
+  	var Note = function($scope){
+    	$scope.items = [];
+
+    	$scope.add = function () {
+      	$scope.items.push({
+        	question: "",
+        	questionPlaceholder: "Question",
+       	 
+        	a: "",
+        	aPlaceholder: "A.",
+        	b: "",
+        	bPlaceholder: "B.",
+        	c: "",
+        	cPlaceholder: "C.",
+        	d: "",
+        	dPlaceholder: "D."
+       	 
+      	 
+      	});
+    	};
+
+
+  	}
+
+
+	</script>
+  </body>
+</html>
